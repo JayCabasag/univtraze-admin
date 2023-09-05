@@ -5,7 +5,7 @@ import EyeSlashIcon from "@assets/eye-slash.svg";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import { cn } from "@/lib/formatter";
-import LoginValidationSchema from "./schema/loginSchema";
+import LoginValidationSchema from "./schema/LoginValidationSchema";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
