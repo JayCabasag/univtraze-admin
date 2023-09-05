@@ -3,21 +3,30 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./routes/auth/Login";
+import MainLayout from "./layout/main-layout/MainLayout";
+import DashboardPage from "./pages/DashboardPage";
+import LoginPage from "./pages/LoginPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <LoginPage />,
   },
   {
     path: "dashboard",
-    element: <div>About</div>,
+    element: <DashboardPage />,
+  },
+  {
+    path: "forgot-password",
+    element: <ForgotPasswordPage />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MainLayout>
+      <RouterProvider router={router} />
+    </MainLayout>
   </React.StrictMode>
 );
