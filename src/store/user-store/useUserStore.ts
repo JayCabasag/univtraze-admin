@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+type StatusType = 'loading' | 'completed'
+
 type UserType = {
   email: string | null,
   type: string | null,
@@ -8,10 +10,11 @@ type UserType = {
 
 type State = {
   user: UserType
-  status: 'loading' | 'completed'
+  status: StatusType
 }
 
 type Actions = {
+  setStatus: (status: StatusType) => void
   addUser: (user: UserType) => void
   clearUser: () => void
 }
@@ -23,6 +26,7 @@ export const useUserStore = create<State & Actions>((set) => ({
     token: null
   },
   status: 'loading',
+  setStatus: (status) => set(() => ({ status })),
   addUser: (user: UserType) => set(() => ({ user })),
   clearUser: () => set(() => ({ user: { email: null, type: null, token: null } })),
 }))
