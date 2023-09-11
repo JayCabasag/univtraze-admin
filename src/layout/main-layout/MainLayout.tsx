@@ -1,6 +1,6 @@
 import Error from "@/components/errors/Error";
 import CommonSpinner from "@/components/shared/CommonSpinner";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState, useEffect} from "react";
 
 // import Navbar from "../../containers/navbar/Navbar";
 
@@ -12,32 +12,12 @@ function MainLayout({ children }: LayoutProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>("");
 
-  // useEffect(() => {
-  //   const checkServerStatus = async () => {
-  //     try {
-  //       await axios.get("/server-status");
-  //     } catch (err) {
-  //       setError("Server is down. Please try again later.");
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   checkServerStatus();
-  // }, []);
-
-  // Asynchronously initialize the Redux store, including data fetching and authentication,
-  // while displaying a loading indicator. Making sure that the store is initialized with credentials and data before rendering the app.
-
   useEffect(() => {
-    const initializeStore = async () => {
-      try {
-        const appStore = await Promise.resolve("Hello");
-      } catch (err) {
-        setError("Error initializing the app.");
-      } finally {
-        setLoading(false);
-      }
+    const initializeStore = () => {
+      setTimeout(() => {
+        setLoading(false)
+        setError("")
+      }, 2000)
     };
 
     initializeStore();
