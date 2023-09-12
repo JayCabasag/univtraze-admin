@@ -1,5 +1,5 @@
 import Error from "@/components/errors/Error";
-import CommonSpinner from "@/components/shared/CommonSpinner";
+import CommonSpinner from "@/components/shared/spinners/CommonSpinner";
 import { ReactNode, useState, useEffect} from "react";
 
 // import Navbar from "../../containers/navbar/Navbar";
@@ -17,7 +17,7 @@ function MainLayout({ children }: LayoutProps) {
       setTimeout(() => {
         setLoading(false)
         setError("")
-      }, 2000)
+      }, 1000)
     };
 
     initializeStore();

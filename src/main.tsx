@@ -7,10 +7,11 @@ import MainLayout from "./layout/main-layout/MainLayout";
 import DashboardPage from "./pages/DashboardPage";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import { Toaster } from "./components/shared/toast/toaster";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <LoginPage />,
   },
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MainLayout>
+      <Toaster />
       <RouterProvider router={router} />
     </MainLayout>
   </React.StrictMode>
