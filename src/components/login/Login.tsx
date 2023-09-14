@@ -8,7 +8,7 @@ import { useForm, FieldErrors } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "./schemas/schema";
 import { UserType } from "./constants/constants";
-import { signIn } from "@/zustand/api/adminAPI";
+import { signIn } from "@/services/zustand/api/adminAPI";
 import { useToast } from "../shared/toast/use-toast";
 
 interface FormValues {
@@ -50,7 +50,7 @@ export default function Login() {
       toast({
         variant: "destructive",
         title: "Login failed",
-        description: "Double check credentials",
+        description: error.message,
       })
     })
   }
@@ -58,7 +58,6 @@ export default function Login() {
   const onError = (errors: FieldErrors) => {
     console.log(errors)
   }
-
 
   return (
     <form onSubmit={handleSubmit(onSubmit, onError)} className="h-auto w-[430px] bg-[#FFFFFF] p-[30px] rounded-[20px] shadow-md">
