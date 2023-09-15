@@ -3,12 +3,12 @@ import UnivtrazeLogo from "@assets/logo.svg";
 import EyeIcon from "@assets/eye.svg";
 import EyeSlashIcon from "@assets/eye-slash.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { cn } from "@/lib/formatter";
+import { cn } from "@/utils/formatters";
 import { useForm, FieldErrors } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "./schemas/schema";
 import { UserType } from "./constants/constants";
-import { signIn } from "@/services/zustand/api/adminAPI";
+import { signInAction } from "@/services/actions/authActions";
 import { useToast } from "../shared/toast/use-toast";
 
 interface FormValues {
@@ -35,7 +35,7 @@ export default function Login() {
 
   const onSubmit = async (data: FormValues) => {
     const payload = { ...data, type: UserType.ADMIN}
-    await signIn(payload)
+    await signInAction(payload)
     .then((response) => {
       console.log(response)
       toast({
@@ -57,6 +57,12 @@ export default function Login() {
 
   const onError = (errors: FieldErrors) => {
     console.log(errors)
+    const errorMessage = errors?.email?.message as string  ?? errors?.password?.message as string ?? 'An error occured'
+    toast({
+      variant: "destructive",
+      title: "Login failed",
+      description: errorMessage,
+    })
   }
 
   return (
@@ -96,8 +102,7 @@ export default function Login() {
           type={showPassword ? "text" : "password"}
           className="bg-[transparent] flex-1 outline-none h-[44px] rounded-[10px] p-[15px]"
         />
-        <span
-          role="button"
+        <button
           onClick={() => setShowPassword(!showPassword)}
           className="cursor-pointer rounded-full"
         >
@@ -107,7 +112,7 @@ export default function Login() {
             width={24}
             alt="logo"
           />
-        </span>
+        </button>
       </div>
       {hasPasswordError && (
         <p className="text-[red] font-thin mt-[10px]">

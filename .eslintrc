@@ -1,0 +1,45 @@
+{
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:import/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "eslint-config-prettier"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      },
+      "import/resolver": {
+        "eslint-import-resolver-custom-alias": {
+          "alias": {
+            "@": "./src",
+            "@assets": "./src/assets",
+            "@components": "./src/components",
+            "@containers": "./src/containers",
+            "@lib": "./src/lib",
+            "@layout": "./src/layout",
+            "@pages": "./src/pages"
+          },
+          "extensions": [".js", ".jsx", ".ts", ".tsx"],
+          "packages": [
+            "packages/*"
+          ]
+        }
+      }
+    },
+    "rules": {
+      "no-unused-vars": [
+        "error",
+        {
+          "vars": "all",
+          "args": "after-used",
+          "ignoreRestSiblings": true,
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "react/react-in-jsx-scope": "off"
+    }
+  }

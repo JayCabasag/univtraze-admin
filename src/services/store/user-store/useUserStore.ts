@@ -14,8 +14,8 @@ type State = {
 }
 
 type Actions = {
-  setStatus: (status: StatusType) => void
-  addUser: (user: UserType) => void
+  setStatus: (_status: StatusType) => void
+  addUser: (_user: UserType) => void
   clearUser: () => void
 }
 
