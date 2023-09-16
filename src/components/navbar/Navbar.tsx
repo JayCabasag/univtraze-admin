@@ -13,8 +13,7 @@ const menuList = [
 const ICON_SIZE = 33;
 
 export default function Navbar() {
-
-  const totalNotifications = 2
+  const totalNotifications = 2;
 
   return (
     <div className="top-0 sticky h-[80px] p-[15px] md:p-0 bg-[#FFFFFF] w-full shadow-md flex items-center justify-center">
@@ -28,7 +27,7 @@ export default function Navbar() {
         <div className="flex gap-[82px]">
           <button className="relative">
             {totalNotifications > 0 && (
-               <span className="w-[20px] h-[20px] flex items-center justify-center bg-[#EA1B1B] absolute -left-[10px] top-0 text-white font-normal text-[12px] border-2 rounded-full border-white px-1">
+              <span className="w-[20px] h-[20px] flex items-center justify-center bg-[#EA1B1B] absolute -left-[10px] top-0 text-white font-normal text-[12px] border-2 rounded-full border-white px-1">
                 {totalNotifications}
               </span>
             )}
