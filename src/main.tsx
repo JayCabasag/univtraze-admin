@@ -4,10 +4,13 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "./layout/main-layout/MainLayout";
-import DashboardPage from "./pages/DashboardPage";
-import LoginPage from "./pages/LoginPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import DashboardPage from "./pages/(dashboard)/DashboardPage";
+import LoginPage from "./pages/(auth)/LoginPage";
+import ForgotPasswordPage from "./pages/(auth)/ForgotPasswordPage";
 import { Toaster } from "./components/shared/toast/toaster";
+import AllRoomsPage from "./pages/(dashboard)/AllRoomsPage";
+import AddRoomPage from "./pages/(dashboard)/AddRoomPage";
+import DashboardLayout from "./layout/dashboard-layout/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +19,22 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <DashboardPage />,
+    element: <DashboardLayout />,
+    children:  [
+      {
+        path: "",
+        element: <DashboardPage />,
+      },
+      {
+        path: "all-rooms",
+        element: <AllRoomsPage />,
+      },
+      {
+        path: "add-room",
+        element: <AddRoomPage />,
+       
+      },
+    ],
   },
   {
     path: "forgot-password",
