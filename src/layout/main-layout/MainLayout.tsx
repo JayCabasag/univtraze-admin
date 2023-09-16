@@ -25,7 +25,7 @@ function MainLayout({ children }: LayoutProps) {
     return <div className="flex items-center justify-center h-screen">{loading ? <CommonSpinner /> : <Error />}</div>;
   }
 
-  return <div className="h-full w-screen bg-[#E1F5E4]">{children}</div>;
+  return <div className="h-full w-full bg-[#E1F5E4]">{children}</div>;
 }
 
 export default MainLayout;
