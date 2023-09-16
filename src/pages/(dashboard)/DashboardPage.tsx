@@ -19,7 +19,7 @@ const covidUpdateList = [
 
 export default function DashboardPage() {
   return (
-    <div className="p-[15px] md:p-0 md:py-[90px] h-auto">
+    <div className="p-[15px] md:p-0 md:py-[70px] h-auto">
       <div>
         <h4 className="text-[#364D39]">Welcome back, Admin</h4>
         <h1 className="mt-[5px] text-[28px] font-bold text-[#3.64D39]">Here&rsquo;s an update for today</h1>
