@@ -1,8 +1,3 @@
 export default function AddRoomPage() {
-    return (
-      <main>
-        Logging out...
-      </main>
-    );
-  }
-  
+  return <main>Logging out...</main>;
+}

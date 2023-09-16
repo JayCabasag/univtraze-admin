@@ -1,6 +1,6 @@
-import Error from "@/components/errors/Error";
-import CommonSpinner from "@/components/shared/spinners/CommonSpinner";
-import { ReactNode, useState, useEffect} from "react";
+import Error from '@/components/errors/Error';
+import CommonSpinner from '@/components/shared/spinners/CommonSpinner';
+import { ReactNode, useState, useEffect } from 'react';
 
 // import Navbar from "../../containers/navbar/Navbar";
 
@@ -10,25 +10,21 @@ interface LayoutProps {
 
 function MainLayout({ children }: LayoutProps) {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     const initializeStore = () => {
       setTimeout(() => {
-        setLoading(false)
-        setError("")
-      }, 1000)
+        setLoading(false);
+        setError('');
+      }, 1000);
     };
 
     initializeStore();
   }, []);
 
   if (loading || error) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        {loading ? <CommonSpinner /> : <Error />}
-      </div>
-    );
+    return <div className="flex items-center justify-center h-screen">{loading ? <CommonSpinner /> : <Error />}</div>;
   }
 
   return (

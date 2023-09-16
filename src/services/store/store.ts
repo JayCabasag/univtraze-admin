@@ -1,3 +1,1 @@
-export const createAppStore = async () => {
-    
-}
+export const createAppStore = async () => {};

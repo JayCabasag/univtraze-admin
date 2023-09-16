@@ -1,12 +1,11 @@
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
-export function useCurrentUser(){
-    useEffect(() => {
-      const getUserFromClient = () => {
-      }
-      getUserFromClient()
-      return () => {}
-    }, [])
-    
-    return { user: null }
+export function useCurrentUser() {
+  useEffect(() => {
+    const getUserFromClient = () => {};
+    getUserFromClient();
+    return () => {};
+  }, []);
+
+  return { user: null };
 }

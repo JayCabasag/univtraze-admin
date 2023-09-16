@@ -1,5 +1,5 @@
 export type AdminSignInType = {
-    email: string
-    password: string
-    type: 'admin'
-}
+  email: string;
+  password: string;
+  type: 'admin';
+};
