@@ -1,4 +1,4 @@
-import { signIn, signOut } from '../api/authAPI';
+import { signIn, signOut, verify } from '../api/authAPI';
 import { AdminSignInType } from '../constants/adminConstants';
 
 export const signInAction = async (credential: AdminSignInType) => {
@@ -6,7 +6,7 @@ export const signInAction = async (credential: AdminSignInType) => {
   if (error) {
     throw new Error(error);
   }
-  return data;
+  return data
 };
 
 export const signOutAction = async () => {
@@ -16,3 +16,12 @@ export const signOutAction = async () => {
   }
   return data;
 };
+
+export const verifyAction = async () => {
+  const { error, data } = await verify();
+  if (error) {
+    throw new Error(error);
+  }
+  return data;
+};
+

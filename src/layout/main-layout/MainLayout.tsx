@@ -2,8 +2,6 @@ import Error from '@/components/errors/Error';
 import CommonSpinner from '@/components/shared/spinners/CommonSpinner';
 import { ReactNode, useState, useEffect } from 'react';
 
-// import Navbar from "../../containers/navbar/Navbar";
-
 interface LayoutProps {
   children: ReactNode;
 }
@@ -28,8 +26,7 @@ function MainLayout({ children }: LayoutProps) {
   }
 
   return (
-    <div className="h-screen w-screen bg-[#E1F5E4]">
-      {/* <Navbar /> */}
+    <div className="h-full w-screen bg-[#E1F5E4]">
       {children}
     </div>
   );

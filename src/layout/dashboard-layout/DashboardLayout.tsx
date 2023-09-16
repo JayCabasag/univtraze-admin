@@ -3,10 +3,10 @@ import { Outlet } from 'react-router-dom';
 
 export default function DashboardLayout() {
   return (
-    <main>
+    <main className='h-auto'>
       <Navbar />
-      <section className="w-full flex justify-center">
-        <div className="w-full max-w-7xl">
+      <section className="h-auto w-full flex justify-center">
+        <div className="w-full max-w-7xl h-auto">
           <Outlet />
         </div>
       </section>

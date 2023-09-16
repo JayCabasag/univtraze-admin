@@ -40,14 +40,13 @@ export default function Login() {
   const onSubmit = async (data: FormValues) => {
     const payload = { ...data, type: UserType.ADMIN };
     await signInAction(payload)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
+        navigate('/dashboard');
         toast({
           variant: 'succes',
           title: 'Login success',
           description: 'Successfully login as an admin',
         });
-        navigate('/dashboard');
       })
       .catch((error) => {
         console.log(error);
@@ -73,7 +72,7 @@ export default function Login() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit, onError)}
-      className="h-auto w-[430px] bg-[#FFFFFF] p-[30px] rounded-[20px] shadow-md"
+      className="h-auto w-full max-w-[430px] bg-[#FFFFFF] p-[30px] rounded-[20px] shadow-md"
     >
       <div className="flex gap-[15px] items-center justify-center">
         <img src={UnivtrazeLogo} height={33} width={33} alt="logo" />
@@ -85,7 +84,7 @@ export default function Login() {
       <input
         {...register('email')}
         className={cn(
-          'outline-none h-[44px] w-[370px] rounded-[10px] p-[15px]',
+          'outline-none h-[44px] w-full max-w-[370px] rounded-[10px] p-[15px]',
           hasEmailError ? 'bg-[#ffbaba]' : 'bg-[#E1F5E4]',
         )}
       />
@@ -93,7 +92,7 @@ export default function Login() {
       <p className="text-[16px] font-normal mb-[6px] mt-[10px] text-[#364D39]">Password</p>
       <div
         className={cn(
-          'rounded-[10px] flex items-center justify-center pr-[15px] w-[370px]',
+          'rounded-[10px] flex items-center justify-center pr-[15px] w-full max-w-[370px]',
           hasPasswordError ? 'bg-[#ffbaba]' : 'bg-[#E1F5E4]',
         )}
       >
@@ -102,14 +101,14 @@ export default function Login() {
           type={showPassword ? 'text' : 'password'}
           className="bg-[transparent] flex-1 outline-none h-[44px] rounded-[10px] p-[15px]"
         />
-        <button onClick={() => setShowPassword(!showPassword)} className="cursor-pointer rounded-full">
+        <button type='button' onClick={() => setShowPassword(!showPassword)} className="cursor-pointer rounded-full">
           <img src={showPassword ? EyeIcon : EyeSlashIcon} height={24} width={24} alt="logo" />
         </button>
       </div>
       {hasPasswordError && <p className="text-[red] font-thin mt-[10px]">{errors.password?.message}</p>}
       <button
         disabled={isSubmitting}
-        className="w-[370px] h-[44px] mt-[20px] text-white text-[16px] font-bold shadow-md rounded-[10px] bg-gradient-to-b from-[#6BF27F] to-[#28cd41]"
+        className="w-full max-w-[370px] h-[44px] mt-[20px] text-white text-[16px] font-bold shadow-md rounded-[10px] bg-gradient-to-b from-[#6BF27F] to-[#28cd41]"
       >
         {isSubmitting ? 'Please wait...' : 'LOG IN'}
       </button>
