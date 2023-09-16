@@ -5,7 +5,11 @@ export default function DashboardLayout() {
   return (
     <main>
       <Navbar />
-      <Outlet />
+      <section className="w-full flex justify-center">
+        <div className="w-full max-w-7xl">
+          <Outlet />
+        </div>
+      </section>
     </main>
   );
 }

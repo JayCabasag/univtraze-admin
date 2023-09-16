@@ -11,6 +11,7 @@ import { Toaster } from './components/shared/toast/toaster';
 import AllRoomsPage from './pages/(dashboard)/AllRoomsPage';
 import AddRoomPage from './pages/(dashboard)/AddRoomPage';
 import DashboardLayout from './layout/dashboard-layout/DashboardLayout';
+import LogoutPage from './pages/(dashboard)/LogoutPage';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: 'add-room',
         element: <AddRoomPage />,
+      },
+      {
+        path: 'logout',
+        element: <LogoutPage />,
       },
     ],
   },
