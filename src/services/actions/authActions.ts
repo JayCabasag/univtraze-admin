@@ -6,7 +6,7 @@ export const signInAction = async (credential: AdminSignInType) => {
   if (error) {
     throw new Error(error);
   }
-  return data
+  return data;
 };
 
 export const signOutAction = async () => {
@@ -24,4 +24,3 @@ export const verifyAction = async () => {
   }
   return data;
 };
-

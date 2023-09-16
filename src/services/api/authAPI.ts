@@ -4,7 +4,7 @@ import { ADMIN_API, LOCAL_STORAGE_KEY, handleApiError } from './utils';
 export const signIn = async (credential: AdminSignInType) => {
   try {
     const res = await ADMIN_API.post('/auth/signin', credential);
-    localStorage.setItem('token', res.data['access_token'])
+    localStorage.setItem('token', res.data['access_token']);
     return { error: null, data: res.data };
   } catch (error) {
     return handleApiError(error as Error);

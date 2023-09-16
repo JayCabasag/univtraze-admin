@@ -1,5 +1,3 @@
 export default function AttendancePage() {
-  return (
-    <div>AttendancePage</div>
-  )
+  return <div>AttendancePage</div>;
 }

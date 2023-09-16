@@ -26,7 +26,7 @@ export const ADMIN_API = axios.create({
   },
 });
 
-ADMIN_API.interceptors.request.use(adminAuthInterceptor)
+ADMIN_API.interceptors.request.use(adminAuthInterceptor);
 
 export const handleApiError = async (error: AxiosError | Error) => {
   const errorMessage = error.message || 'An unexpected error occurred.';

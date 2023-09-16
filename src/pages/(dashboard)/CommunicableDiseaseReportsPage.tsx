@@ -1,5 +1,3 @@
 export default function CommunicableDiseaseReportsPage() {
-  return (
-    <div>CommunicatbleDiseaseReports</div>
-  )
+  return <div>CommunicatbleDiseaseReports</div>;
 }

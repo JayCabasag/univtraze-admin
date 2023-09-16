@@ -1,1 +1,1 @@
-export const PUBLIC_PAGES = [""]
+export const PUBLIC_PAGES = [''];

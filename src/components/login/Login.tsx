@@ -101,7 +101,7 @@ export default function Login() {
           type={showPassword ? 'text' : 'password'}
           className="bg-[transparent] flex-1 outline-none h-[44px] rounded-[10px] p-[15px]"
         />
-        <button type='button' onClick={() => setShowPassword(!showPassword)} className="cursor-pointer rounded-full">
+        <button type="button" onClick={() => setShowPassword(!showPassword)} className="cursor-pointer rounded-full">
           <img src={showPassword ? EyeIcon : EyeSlashIcon} height={24} width={24} alt="logo" />
         </button>
       </div>

@@ -13,14 +13,14 @@ export default function Navbar() {
   return (
     <div className="h-[80px] p-[15px] md:p-0 bg-[#FFFFFF] w-full shadow-md flex items-center justify-center">
       <div className="w-full max-w-7xl flex justify-between">
-        <Link to={"/dashboard"}>
+        <Link to={'/dashboard'}>
           <span className="flex gap-2 items-center">
             <img src={logoSVG} height={33} width={33} alt="logo" />
             <h1 className="text-[#364D39] text-[22px] font-bold">UnivTraze</h1>
           </span>
         </Link>
         <Popover>
-          <PopoverTrigger  className="cursor-pointer hover:bg-slate-100 p-3 rounded">
+          <PopoverTrigger className="cursor-pointer hover:bg-slate-100 p-3 rounded">
             <img src={menuSVG} height={33} width={33} alt="menu" />
           </PopoverTrigger>
           <PopoverContent className="rounded-[20px] bg-white p-0 mt-[20px]">

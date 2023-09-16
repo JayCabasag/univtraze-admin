@@ -17,11 +17,13 @@ import CommunicableDiseaseReportsPage from './pages/(dashboard)/CommunicableDise
 import EmergencyReportsPage from './pages/(dashboard)/EmergencyReportsPage';
 import AttendancePage from './pages/(dashboard)/AttendancePage';
 import { verify } from './services/api/authAPI';
+import Error404Page from './pages/Error404Page';
 
 const router = createBrowserRouter([
   {
     path: '',
     element: <LoginPage />,
+    errorElement: <Error404Page />,
   },
   {
     path: 'dashboard',
@@ -31,10 +33,10 @@ const router = createBrowserRouter([
         path: '',
         loader: async () => {
           try {
-            const res = await verify()
-            return res
+            const res = await verify();
+            return res;
           } catch (error) {
-            throw redirect("/");
+            throw redirect('/');
           }
         },
         element: <DashboardPage />,

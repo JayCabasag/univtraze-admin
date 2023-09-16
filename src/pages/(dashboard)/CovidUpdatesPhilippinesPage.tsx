@@ -1,6 +1,3 @@
-
 export default function CovidUpdatesPhilippinesPage() {
-  return (
-    <div>CovidUpdatesPhilippinesPage</div>
-  )
+  return <div>CovidUpdatesPhilippinesPage</div>;
 }

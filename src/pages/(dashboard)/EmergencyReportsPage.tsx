@@ -1,5 +1,3 @@
 export default function EmergencyReportsPage() {
-  return (
-    <div>EmergencyReports</div>
-  )
+  return <div>EmergencyReports</div>;
 }
