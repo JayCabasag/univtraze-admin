@@ -16,7 +16,7 @@ interface FormValues {
   password: string;
 }
 
-export default function Login() {
+export default function LoginForm() {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [showPassword, setShowPassword] = useState(false);
