@@ -41,7 +41,7 @@ export default function DashboardPage() {
               </div>
             );
           })}
-          <button className="w-full rounded-[15px] h-[55px] text-white text-[16px] font-bold bg-gradient-to-b from-[#6BF27F] to-[#28CD41] capitalize">
+          <button className="w-full mt-auto mb-0 rounded-[15px] h-[55px] text-white text-[16px] font-bold bg-gradient-to-b from-[#6BF27F] to-[#28CD41] capitalize">
             See full details
           </button>
         </div>

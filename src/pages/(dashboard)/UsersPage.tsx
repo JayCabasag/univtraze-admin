@@ -1,10 +1,11 @@
+import AllUsers from '@/components/all-users/AllUsers';
 import Header from '@/components/header/Header';
 
 export default function UsersPage() {
   return (
-    <main>
+    <main className='px-[15px]'>
       <Header title="Dashboard" sub={'Users'} />
-      <div className="py-[60px] flex flex-col md:flex-row gap-[33px]">All rooms</div>
+      <AllUsers />
     </main>
   );
 }

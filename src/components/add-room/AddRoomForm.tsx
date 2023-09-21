@@ -15,7 +15,7 @@ interface FormValues {
 
 export default function AddRoomForm() {
   const { toast } = useToast();
-  const qrCodeContext = useQrContext()
+  const qrCodeContext = useQrContext();
   const form = useForm<FormValues>({
     defaultValues: {
       roomNumber: '',
@@ -33,8 +33,8 @@ export default function AddRoomForm() {
   } = form;
 
   const onSubmit = (data: FormValues) => {
-    const payload = encode(JSON.stringify(data))
-    qrCodeContext.handleUpdate(payload)
+    const payload = encode(JSON.stringify(data));
+    qrCodeContext.handleUpdate(payload);
   };
 
   const onError = () => {

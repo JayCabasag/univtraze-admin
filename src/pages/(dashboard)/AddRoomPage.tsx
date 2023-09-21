@@ -5,7 +5,7 @@ import Header from '@/components/header/Header';
 
 export default function AddRoomPage() {
   return (
-    <main className='px-[15px]'>
+    <main className="px-[15px]">
       <Header title="Dashboard" sub={'user'} />
       <QrContextProvider>
         <div className="py-[60px] flex flex-col md:flex-row gap-[33px]">

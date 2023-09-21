@@ -3,19 +3,15 @@ import { useQrContext } from './context/qrContext';
 
 export default function AddRoomPreview() {
   const isSubmitting = false;
-  const qrContext = useQrContext()
-  const qrPayload = qrContext.payload
+  const qrContext = useQrContext();
+  const qrPayload = qrContext.payload;
 
   return (
-    <div className='flex flex-col p-[15px]'>
+    <div className="flex flex-col p-[15px]">
       <h2 className="text-[28px] uppercase font-bold text-[#364D39]">Add room</h2>
       <div className="min-h-[320px] py-[20px] flex w-full items-center justify-center">
-        {qrPayload !== '' && (
-            <QRCode value={qrPayload} />
-        )}
-        {qrPayload === '' && (
-            <h1 className='text-xl'>Generated QR Code will appear here...</h1>
-        )}
+        {qrPayload !== '' && <QRCode value={qrPayload} />}
+        {qrPayload === '' && <h1 className="text-xl">Generated QR Code will appear here...</h1>}
       </div>
       <button
         disabled={isSubmitting}
