@@ -1,7 +1,10 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FieldErrors, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { addRoomSchema } from './schemas/shemas';
 import { cn } from '@/utils/formatters';
+import { useQrContext } from './context/qrContext';
+import { encode } from 'js-base64';
+import { useToast } from '../shared/toast/use-toast';
 
 interface FormValues {
   roomNumber: string;
@@ -11,6 +14,8 @@ interface FormValues {
 }
 
 export default function AddRoomForm() {
+  const { toast } = useToast();
+  const qrCodeContext = useQrContext()
   const form = useForm<FormValues>({
     defaultValues: {
       roomNumber: '',
@@ -28,11 +33,16 @@ export default function AddRoomForm() {
   } = form;
 
   const onSubmit = (data: FormValues) => {
-    console.log(data);
+    const payload = encode(JSON.stringify(data))
+    qrCodeContext.handleUpdate(payload)
   };
 
-  const onError = (errors: FieldErrors) => {
-    console.log(errors);
+  const onError = () => {
+    toast({
+      variant: 'destructive',
+      title: 'Login failed',
+      description: 'Make sure all inputs are correct',
+    });
   };
 
   return (
