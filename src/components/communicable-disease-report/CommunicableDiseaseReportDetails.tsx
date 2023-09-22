@@ -22,11 +22,9 @@ export default function CommunicableDiseaseReportDetails() {
         </div>
       </div>
       <div>
-      <button
-        className="w-full h-[44px] mt-[20px] text-white text-[16px] font-bold shadow-md rounded-[10px] bg-gradient-to-b from-[#6BF27F] to-[#28cd41]"
-      >
-        Overview
-      </button>
+        <button className="w-full h-[44px] mt-[20px] text-white text-[16px] font-bold shadow-md rounded-[10px] bg-gradient-to-b from-[#6BF27F] to-[#28cd41]">
+          Overview
+        </button>
       </div>
     </div>
   );
