@@ -1,17 +1,30 @@
 import QRCode from 'react-qr-code';
 import { useQrContext } from './context/qrContext';
 import { encode } from "js-base64"
+import { addRoomAction } from '@/services/actions/adminActions';
+import { useToast } from '../shared/toast/use-toast';
 
 export default function AddRoomPreview() {
   const isSubmitting = false;
-  const qrContext = useQrContext();
-  const payload = qrContext.payload
+  const { payload, isValidPayload } = useQrContext();
+  const { toast } = useToast()
 
-  const isValidPayload = true; 
   const encodedQRPayload = encode(JSON.stringify(payload))
 
-  const handleSubmit = () => {
-    console.log('Submitted')
+  const handleSubmit = async () => {
+    addRoomAction(payload).then(() => {
+      toast({
+        variant: 'succes',
+        title: 'Room added successfully',
+        description: `Successfully added Room ${payload.roomName} - ${payload.roomNumber}`,
+      });
+    }).catch((error) => {
+      toast({
+        variant: 'destructive',
+        title: 'Failed adding room',
+        description: error.message,
+      });
+    })
   }
 
   return (
