@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <div className="top-0 sticky h-[80px] p-[15px] md:p-0 bg-[#FFFFFF] w-full shadow-md flex items-center justify-center">
-      <div className="w-full max-w-7xl flex justify-between items-center">
+      <div className="px-[15px] w-full max-w-7xl flex justify-between items-center">
         <Link to={'/dashboard'}>
           <span className="flex gap-2 items-center">
             <img src={logoSVG} height={ICON_SIZE} width={ICON_SIZE} alt="logo" />

@@ -3,10 +3,9 @@ import { useForm } from 'react-hook-form';
 import { addRoomSchema } from './schemas/shemas';
 import { cn } from '@/utils/formatters';
 import { useQrContext } from './context/qrContext';
-import { encode } from 'js-base64';
 import { useToast } from '../shared/toast/use-toast';
 
-interface FormValues {
+export interface FormValues {
   roomNumber: string;
   roomName: string;
   buildingNumber: string;
@@ -33,14 +32,13 @@ export default function AddRoomForm() {
   } = form;
 
   const onSubmit = (data: FormValues) => {
-    const payload = encode(JSON.stringify(data));
-    qrCodeContext.handleUpdate(payload);
+    qrCodeContext.handleUpdate(data);
   };
 
   const onError = () => {
     toast({
       variant: 'destructive',
-      title: 'Login failed',
+      title: 'Failed adding room',
       description: 'Make sure all inputs are correct',
     });
   };
